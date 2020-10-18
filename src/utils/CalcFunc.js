@@ -1,3 +1,5 @@
+import { Decimal } from "decimal.js";
+
 export const calcFunc = (
   value,
   btn,
@@ -49,18 +51,16 @@ export const calcFunc = (
       setValue(value + ".");
       break;
     case "=":
+      const memNum = new Decimal(memNumber);
+      const num = new Decimal(number);
       if (operator === "+") {
-        const result = parseFloat(memNumber + number);
-        setValue(result);
+        setValue(memNum.plus(num).toNumber());
       } else if (operator === "-") {
-        const result = parseFloat(memNumber - number);
-        setValue(result);
+        setValue(memNum.minus(num).toNumber());
       } else if (operator === "x") {
-        const result = parseFloat(memNumber * number);
-        setValue(parseResult(result));
+        setValue(memNum.mul(num).toNumber());
       } else if (operator === "÷") {
-        const result = parseFloat(memNumber / number);
-        setValue(parseResult(result));
+        setValue(memNum.div(num).toNumber());
       }
       memNumber &&
         setEquation({
@@ -92,8 +92,4 @@ const operatorFunc = (operator, setMemNumber, memNumber, number) => {
   } else {
     setMemNumber(number);
   }
-};
-
-const parseResult = (result) => {
-  return result.toFixed(2).toString();
 };

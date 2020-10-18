@@ -44,3 +44,6 @@
   transform: translate(-50%);
   outline: none;
 }
+.history-message-scientific {
+  font-size: 18px;
+}

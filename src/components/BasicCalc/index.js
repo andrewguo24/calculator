@@ -23,22 +23,26 @@ const BasicCalc = ({
         />
       ))}
     </div>
-    {history?.length > 0 && (
-      <div className="history-container-basic">
-        {history?.map((item, index) => (
-          <div key={index} className="history-item-basic">
-            <div className="history-equation-basic">{item.equation}</div>
-            <div className="history-result-basic">{item.result}</div>
-          </div>
-        ))}
-        <button
-          className="history-btn-basic"
-          onClick={() => handleClearHistory()}
-        >
-          Clear History
-        </button>
-      </div>
-    )}
+    <div className="history-container-basic">
+      {history?.length > 0 ? (
+        <>
+          {history?.map((item, index) => (
+            <div key={index} className="history-item-basic">
+              <div className="history-equation-basic">{item.equation}</div>
+              <div className="history-result-basic">{item.result}</div>
+            </div>
+          ))}
+          <button
+            className="history-btn-basic"
+            onClick={() => handleClearHistory()}
+          >
+            Clear History
+          </button>
+        </>
+      ) : (
+        <div className="history-message-basic">No Calculation History...</div>
+      )}
+    </div>
   </>
 );
 

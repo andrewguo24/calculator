@@ -23,11 +23,11 @@
 }
 
 .history-equation-basic {
-  font-size: 24px;
+  font-size: 10x;
 }
 
 .history-result-basic {
-  font-size: 36px;
+  font-size: 18px;
 }
 
 .history-item-basic {
@@ -45,4 +45,8 @@
   left: 50%;
   transform: translate(-50%);
   outline: none;
+}
+
+.history-message-basic {
+  font-size: 12px;
 }

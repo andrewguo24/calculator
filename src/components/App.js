@@ -40,8 +40,13 @@ const App = () => {
   useEffect(
     () => {
       if (value !== null && operator === "=") {
-        setHistory(history?.concat({ ...equation, result: valueWithComma }));
-        localStorage.setItem("history", JSON.stringify(history));
+        setHistory(history?.concat([{ ...equation, result: valueWithComma }]));
+        localStorage.setItem(
+          "history",
+          JSON.stringify(
+            history?.concat([{ ...equation, result: valueWithComma }])
+          )
+        );
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps

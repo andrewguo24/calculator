@@ -10,7 +10,7 @@ export const calcFunc = (
 ) => {
   const number = parseFloat(value);
   switch (btn) {
-    case "C":
+    case "AC":
       setValue("0");
       setMemNumber(null);
       setOperator(null);

@@ -1,0 +1,63 @@
+.Button {
+  background: #696969;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  place-self: center;
+}
+
+.Button.zero {
+  min-width: 75%;
+  grid-column-start: 7;
+  grid-column-end: 9;
+  border-radius: 57.5px;
+  position: relative;
+  justify-content: flex-start;
+  padding-left: 25px;
+}
+
+.Button.symbol {
+  background: #dcdcdc;
+  color: black;
+}
+
+.Button.operator {
+  background: orange;
+  color: white;
+}
+
+.Button-mobile {
+  background: #696969;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.Button-mobile.zero {
+  width: 75%;
+  grid-column: 1 / span 2;
+  border-radius: 57.5px;
+  position: relative;
+  justify-content: flex-start;
+  padding-left: 25px;
+}
+
+.Button-mobile.symbol {
+  background: #dcdcdc;
+  color: black;
+}
+
+.Button-mobile.operator {
+  background: orange;
+  color: white;
+}

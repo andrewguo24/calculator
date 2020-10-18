@@ -1,0 +1,48 @@
+.basic-display {
+  font-size: 60px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  text-align: right;
+  word-break: break-all;
+  padding: 0 5%;
+}
+
+.btn-basic-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.history-container-basic {
+  max-height: 20vh;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: right;
+  overflow: auto;
+}
+
+.history-equation-basic {
+  font-size: 24px;
+}
+
+.history-result-basic {
+  font-size: 36px;
+}
+
+.history-item-basic {
+  padding: 5px;
+}
+
+.history-btn-basic {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  bottom: 20px;
+  border-radius: 20px;
+  background: white;
+  color: black;
+  left: 50%;
+  transform: translate(-50%);
+  outline: none;
+}

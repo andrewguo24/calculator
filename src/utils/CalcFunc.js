@@ -47,7 +47,7 @@ export const calcFunc = (
       setOperator("÷");
       break;
     case ".":
-      if (value.includes(".")) return;
+      if (value?.includes(".")) return;
       setValue(value + ".");
       break;
     case "=":
@@ -55,22 +55,25 @@ export const calcFunc = (
       const num = new Decimal(number);
       if (operator === "+") {
         setValue(memNum.plus(num).toNumber());
+        setMemNumber(memNum.plus(num).toNumber());
       } else if (operator === "-") {
         setValue(memNum.minus(num).toNumber());
+        setMemNumber(memNum.minus(num).toNumber());
       } else if (operator === "x") {
         setValue(memNum.mul(num).toNumber());
+        setMemNumber(memNum.mul(num).toNumber());
       } else if (operator === "÷") {
         setValue(memNum.div(num).toNumber());
+        setMemNumber(memNum.div(num).toNumber());
       }
       memNumber &&
         setEquation({
           equation: `${memNumber}${operator}${value}=`,
         });
-      setMemNumber(null);
       setOperator("=");
       break;
     default:
-      if (value[value.length - 1] === ".") {
+      if (value[value?.length - 1] === ".") {
         return setValue(value + btn);
       } else {
         return setValue(parseFloat(number + btn).toString());

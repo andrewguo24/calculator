@@ -8,9 +8,14 @@ const ScientificCalc = ({
   handleBtnClick,
   history,
   handleClearHistory,
+  operator,
+  operatorArr,
+  memNumber,
 }) => (
   <>
-    <div className="display">{value}</div>
+    <div className="display">
+      {operatorArr?.includes(operator) && value === "0" ? memNumber : value}
+    </div>
     <div className="btn-scientific-container">
       {scientificBtnArr?.map(({ btn, type }) => (
         <Button

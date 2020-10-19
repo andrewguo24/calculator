@@ -18,6 +18,7 @@ const App = () => {
   const [history, setHistory] = useState(historyArr);
   const valueWithComma = addComma(value, setEquation);
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 960px)" });
+  const operatorArr = ["+", "-", "x", "÷"];
 
   const handleBtnClick = (btn) => () => {
     return calcFunc(
@@ -70,6 +71,9 @@ const App = () => {
           handleBtnClick={handleBtnClick}
           handleClearHistory={handleClearHistory}
           history={history}
+          operator={operator}
+          operatorArr={operatorArr}
+          memNumber={memNumber}
         />
       ) : (
         <BasicCalc
@@ -78,6 +82,9 @@ const App = () => {
           handleClearHistory={handleClearHistory}
           isTabletOrMobile={isTabletOrMobile}
           history={history}
+          operator={operator}
+          operatorArr={operatorArr}
+          memNumber={memNumber}
         />
       )}
     </div>

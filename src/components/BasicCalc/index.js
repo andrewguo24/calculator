@@ -9,9 +9,14 @@ const BasicCalc = ({
   isTabletOrMobile,
   handleClearHistory,
   history,
+  operator,
+  operatorArr,
+  memNumber,
 }) => (
   <>
-    <div className="basic-display">{value}</div>
+    <div className="basic-display">
+      {operatorArr?.includes(operator) && value === "0" ? memNumber : value}
+    </div>
     <div className="btn-basic-container">
       {basicBtnArr?.map(({ btn, type }) => (
         <Button

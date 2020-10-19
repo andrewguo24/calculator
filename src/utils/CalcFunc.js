@@ -51,8 +51,8 @@ export const calcFunc = (
       setValue(value + ".");
       break;
     case "=":
-      const memNum = new Decimal(memNumber);
-      const num = new Decimal(number);
+      const memNum = new Decimal(memNumber === null ? "0" : memNumber);
+      const num = new Decimal(number === null ? "0" : number);
       if (operator === "+") {
         setValue(memNum.plus(num).toNumber());
         setMemNumber(memNum.plus(num).toNumber());
@@ -68,7 +68,10 @@ export const calcFunc = (
       }
       memNumber &&
         setEquation({
-          equation: `${memNumber}${operator}${value}=`,
+          equation:
+            memNumber === value && operator === "="
+              ? ""
+              : `${memNumber}${operator}${value}=`,
         });
       setOperator("=");
       break;

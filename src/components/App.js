@@ -54,15 +54,6 @@ const App = () => {
     [operator, value, equation, valueWithComma]
   );
 
-  // console.log("isTabletOrMobile", isTabletOrMobile);
-  console.log("value:", value);
-  console.log("memNumber:", memNumber);
-  console.log("operator:", operator);
-  // console.log("valueWithComma:", valueWithComma);
-  // console.log("equation", equation);
-  // console.log("history:", history);
-  // console.log("historyArr", historyArr);
-
   return (
     <div className="App">
       {!isTabletOrMobile ? (
